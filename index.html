@@ -23,15 +23,15 @@
       attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Station gegevens: naam, locatie (lat, lng), en link
+    // Station gegevens: naam, locatie (lat, lng), en link naar het HTML bestand
     const stations = [
-      { naam: "Brussel Noord", coords: [50.8649, 4.3575], url: "?BrusselNoord" },
-      { naam: "Mechelen", coords: [51.0257, 4.4775], url: "?Mechelen" },
-      { naam: "Londerzeel", coords: [51.0046, 4.3034], url: "?Londerzeel" },
-      { naam: "Vilvoorde", coords: [50.9286, 4.4296], url: "?Vilvoorde" },
-      { naam: "Zaventem Luchthaven", coords: [50.8870, 4.4836], url: "?Zaventem" },
-      { naam: "Brugge", coords: [51.2093, 3.2247], url: "?Brugge" },
-      { naam: "Oostende", coords: [51.2158, 2.9270], url: "?Oostende" }
+      { naam: "Brussel Noord", coords: [50.8649, 4.3575], url: "brussel-noord.html" },
+      { naam: "Mechelen", coords: [51.0257, 4.4775], url: "mechelen.html" },
+      { naam: "Londerzeel", coords: [51.0046, 4.3034], url: "londerzeel.html" },
+      { naam: "Vilvoorde", coords: [50.9286, 4.4296], url: "vilvoorde.html" },
+      { naam: "Zaventem Luchthaven", coords: [50.8870, 4.4836], url: "zaventem.html" },
+      { naam: "Brugge", coords: [51.2093, 3.2247], url: "brugge.html" },
+      { naam: "Oostende", coords: [51.2158, 2.9270], url: "oostende.html" }
     ];
 
     // Voeg een marker toe voor elk station
