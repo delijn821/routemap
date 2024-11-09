@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactie Kaart van Stations</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // Maak de kaart en stel de locatie in op het midden van België
+    const map = L.map('map').setView([50.8503, 4.3517], 8);
+
+    // Voeg de kaartlaag toe
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Station gegevens: naam, locatie (lat, lng), en link
+    const stations = [
+      { naam: "Brussel Noord", coords: [50.8649, 4.3575], url: "?BrusselNoord" },
+      { naam: "Mechelen", coords: [51.0257, 4.4775], url: "?Mechelen" },
+      { naam: "Londerzeel", coords: [51.0046, 4.3034], url: "?Londerzeel" },
+      { naam: "Vilvoorde", coords: [50.9286, 4.4296], url: "?Vilvoorde" },
+      { naam: "Zaventem Luchthaven", coords: [50.8870, 4.4836], url: "?Zaventem" },
+      { naam: "Brugge", coords: [51.2093, 3.2247], url: "?Brugge" },
+      { naam: "Oostende", coords: [51.2158, 2.9270], url: "?Oostende" }
+    ];
+
+    // Voeg een marker toe voor elk station
+    stations.forEach(station => {
+      L.marker(station.coords)
+        .addTo(map)
+        .bindPopup(station.naam)
+        .on('click', () => {
+          window.open(station.url, '_blank');  // Open de URL in een nieuw tabblad
+        });
+    });
+  </script>
+</body>
+</html>
