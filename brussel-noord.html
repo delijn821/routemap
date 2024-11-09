@@ -3,16 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brussel Noord</title>
+  <title>Station Brussel Noord</title>
+  <style>
+    /* Stijl voor modern design */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      color: #333;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #666;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+    th:hover {
+      background-color: #ddd;
+    }
+    .lijnnummer {
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .lightblue { background-color: #add8e6; }
+    .darkblue { background-color: #00008b; }
+    .magenta { background-color: #ff00ff; }
+    .turquoise { background-color: #40e0d0; }
+    .bordeaux { background-color: #800020; }
+    .darkgreen { background-color: #006400; }
+    .yellow { background-color: #ffd700; }
+  </style>
 </head>
 <body>
-  <h1>Brussel Noord</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Proin ac eros eget nisl sollicitudin hendrerit.</p>
-  <p>Nulla facilisi. Phasellus feugiat ligula sit amet volutpat vehicula.</p>
-  <p>Curabitur non ligula nec ipsum viverra gravida.</p>
-  <p>Sed nec ligula vel lorem convallis dictum.</p>
-  <p>Nam sed libero dapibus, gravida ligula a, ullamcorper eros.</p>
-  <p>Vestibulum et orci nec ligula bibendum consectetur.</p>
+  <h1>Station Brussel Noord</h1>
+  <h2>Lijst met lijnnummers, route en voertuigen erop te vinden</h2>
+
+  <table id="linesTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Lijnnummer</th>
+        <th onclick="sortTable(1)">Route</th>
+        <th onclick="sortTable(2)">Voertuigen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="lijnnummer lightblue">R50</span></td>
+        <td>Brussel - Meise - Londerzeel</td>
+        <td>VDL Hybrid, Scania Citywide LE</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer darkblue">R60</span></td>
+        <td>Brussel - Meise - Kapelle-o/d-Bos - Willebroek</td>
+        <td>VDL Hybrid, Scania Citywide LE, Van Hool newA360H</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer magenta">X60</span></td>
+        <td>Brussel - Londerzeel - Boom (snelbus)</td>
+        <td>Scania Citywide LE, Van Hool newAG300</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer turquoise">R45</span></td>
+        <td>Brussel - Wemmel - Merchtem - Dendermonde</td>
+        <td>Scania Citywide LE, Van Hool newAG300, VDL Hybrid, Van Hool newA360H</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer bordeaux">R41</span></td>
+        <td>Brussel - Wemmel - Drijpikkel</td>
+        <td>VDL Hybrid, MAN A21, Mercedes-Benz Citaro, Mercedes-Benz eCitaro, Scania Citywide LE</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer darkgreen">R31</span></td>
+        <td>Brussel - Grimbergen - Verbrande Brug</td>
+        <td>VDL Hybrid</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer yellow">R30</span></td>
+        <td>Brussel - Grimbergen - Humbeek</td>
+        <td>VDL Hybrid</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    // Sorteerfunctie voor de tabel
+    function sortTable(columnIndex) {
+      const table = document.getElementById("linesTable");
+      let switching = true;
+      let shouldSwitch, rows, x, y;
+      let direction = "ascending";
+      let switchCount = 0;
+
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+
+        for (let i = 1; i < rows.length - 1; i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[columnIndex];
+          y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
+
+          if ((direction === "ascending" && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) ||
+              (direction === "descending" && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchCount++;
+        } else if (switchCount === 0 && direction === "ascending") {
+          direction = "descending";
+          switching = true;
+        }
+      }
+    }
+  </script>
 </body>
 </html>
