@@ -31,7 +31,7 @@
       margin-bottom: 20px;
     }
     th, td {
-      padding: 12px;
+      padding: 11px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
@@ -43,68 +43,156 @@
       background-color: #ddd;
     }
     .lijnnummer {
-      color: black;  /* Voor R50, R45 en R30 */
+      color: black;
       padding: 5px 10px;
-      border-radius: 4px;
+      border-radius: 7px;
       font-weight: bold;
     }
-    .lightblue { background-color: #a4c7e1; }   /* R50 */
-    .darkblue { background-color: #00008b; color: white; }
-    .magenta { background-color: #e500b5; color: white; }  /* Intensere tint voor X60 */
-    .turquoise { background-color: #39b9b9; color: black; } /* Iets donkerder turquoise voor R45 */
-    .bordeaux { background-color: #800020; color: white; }
-    .darkgreen { background-color: #228b22; color: black; } /* Felgroenere tint voor R31 */
-    .yellow { background-color: #ffd700; }
+    .rood { background-color: #BB0022; color: white; }
+    .oranje { background-color: #EE8822; }
+    .geel { background-color: #FFCC11; }
+    .lichtgroen { background-color: #BBDD00; }
+    .groen { background-color: #229922; color: white;}
+    .blauw { background-color: #1199DD; }
+    .donkerblauw { background-color: #0044BB; color: white;}
+    .paars { background-color: #991199; color: white;}
+    .bordeaux { background-color: #771133; color: white;}
+    .magenta { background-color: #DD0077; color: white;}
+    .petrol { background-color: #005555; color: white;}
+    .kastanje { background-color: #995511; color: white;}
+    .kaki { background-color: #444411; color: white;}
+    .zalm { background-color: #FFCCAA; }
+    .roze { background-color: #FF88AA; }
+    .staal { background-color: #8899AA; }
+    .munt { background-color: #77CCAA; }
+    .crème { background-color: #BBAA77; }
+    .turkoois { background-color: #0099AA; }
+    .lichtblauw { background-color: #AACCEE; }
+
   </style>
 </head>
 <body>
-  <h1>Station Brussel Noord</h1>
-  <h2>Lijst met lijnnummers, route en voertuigen erop te vinden</h2>
-
+  <h1>Brussel Noord</h1>
   <table id="linesTable">
     <thead>
       <tr>
-        <th onclick="sortTable(0)">Lijnnummer</th>
-        <th onclick="sortTable(1)">Route</th>
-        <th onclick="sortTable(2)">Voertuigen</th>
+        <th onclick="sortTable(0)">Lijn</th>
+        <th onclick="sortTable(1)">Traject</th>
+        <th onclick="sortTable(2)">Vervoerder</th>
       </tr>
     </thead>
     <tbody>
+        <tr>
+            <td><span class="lijnnummer rood">R90</span></td>
+            <td>Brussel - Kortenberg - Leuven</td>
+            <td>Staca K, Multio B, DDVR V</td>
+          </tr>    
+        <tr>
+            <td><span class="lijnnummer groen">126</span></td>
+            <td>Brussel - Ninove (snelbus)</td>
+            <td>Meerbeke (regie), Dilbeek (regie), Muylaert</td>
+          </tr>
+          <tr>
+            <td><span class="lijnnummer kastanje">127</span></td>
+            <td>Brussel - Wambeek - Liedekerke - Ninove</td>
+            <td>Meerbeke (regie), Dilbeek (regie)</td>
+          </tr>
+          <tr>
+            <td><span class="lijnnummer roze">128</span></td>
+            <td>Brussel - Schepdaal - Ninove</td>
+            <td>Meerbeke (regie), Modern Toerisme D, Sylvae H</td>
+          </tr>
+        <tr>
+            <tr>
+                <td><span class="lijnnummer paars">R14</span></td>
+                <td>Brussel - Asse - Aalst</td>
+                <td>Asse (regie), Modern Toerisme D, De Hauwere L, Muylaert</td>
+              </tr>
+              <tr>
+                <td><span class="lijnnummer roze">R15</span></td>
+                <td>Brussel - Ternat - Denderleeuw</td>
+                <td>Modern Toerisme D, Asse (regie), Dilbeek (regie)</td>
+              </tr>
+              <tr>
+                <td><span class="lijnnummer staal">R29</span></td>
+                <td>Brussel - Dilbeek - Ternat</td>
+                <td>Sylvae A, Modern Toerisme D, Dilbeek (regie), Het Rad (regie)</td>
+          <tr>
+            <td><span class="lijnnummer geel">R30</span></td>
+            <td>Brussel - Grimbergen - Humbeek</td>
+            <td>Grimbergen (regie), Modern Toerisme D, Vilvoorde (regie)</td>
+          </tr>
+        </tr>       
+        <td><span class="lijnnummer groen">R31</span></td>
+        <td>Brussel - Grimbergen - Verbrande Brug</td>
+        <td>Grimbergen (regie), Modern Toerisme D</td>
+      </tr>
+          <tr>
+            <td><span class="lijnnummer oranje">R40</span></td>
+            <td>Brussel - Wemmel - Asse</td>
+            <td>Modern Toerisme D, De Reys NOH, DDVR M, Asse (regie), Sylvae A</td>
+          </tr>    
+          <tr>
+            <td><span class="lijnnummer bordeaux">R41</span></td>
+            <td>Brussel - Wemmel - Drijpikkel</td>
+            <td>Modern Toerisme D, De Reys NOH, DDVR M, Asse (regie), Grimbergen (regie), Sylvae A, De Hauwere L</td>
+          </tr>
+          <tr>
+            <td><span class="lijnnummer turkoois">R45</span></td>
+            <td>Brussel - Wemmel - Merchtem - Dendermonde</td>
+            <td>DDVR M, Asse (regie), De Hauwere L, De Reys NOH</td>
+          </tr>
       <tr>
-        <td><span class="lijnnummer lightblue">R50</span></td>
+        <td><span class="lijnnummer lichtblauw">R50</span></td>
         <td>Brussel - Meise - Londerzeel</td>
-        <td>VDL Hybrid, Scania Citywide LE</td>
+        <td>Londerzeel (regie), DDVR M, Grimbergen (regie), De Reys NOH</td>
       </tr>
       <tr>
-        <td><span class="lijnnummer darkblue">R60</span></td>
+        <td><span class="lijnnummer donkerblauw">R60</span></td>
         <td>Brussel - Meise - Kapelle-o/d-Bos - Willebroek</td>
-        <td>VDL Hybrid, Scania Citywide LE, Van Hool newA360H</td>
+        <td>Grimbergen (regie), DDVR M, Londerzeel (regie), De Reys NOH, Modern Toerisme T</td>
       </tr>
       <tr>
         <td><span class="lijnnummer magenta">X60</span></td>
         <td>Brussel - Londerzeel - Boom (snelbus)</td>
-        <td>Scania Citywide LE, Van Hool newAG300</td>
+        <td>DDVR M, Londerzeel (regie), Grimbergen (regie), De Reys NOH</td>
       </tr>
       <tr>
-        <td><span class="lijnnummer turquoise">R45</span></td>
-        <td>Brussel - Wemmel - Merchtem - Dendermonde</td>
-        <td>Scania Citywide LE, Van Hool newAG300, VDL Hybrid, Van Hool newA360H</td>
+        <td><span class="lijnnummer rood">270</span></td>
+        <td>Brussel - Cargo - Kampenhout - Keerbergen</td>
+        <td>De Voeght K, Modern Toerisme T, Leuven (regie)</td>
       </tr>
       <tr>
-        <td><span class="lijnnummer bordeaux">R41</span></td>
-        <td>Brussel - Wemmel - Drijpikkel</td>
-        <td>VDL Hybrid, MAN A21, Mercedes-Benz Citaro, Mercedes-Benz eCitaro, Scania Citywide LE</td>
+        <td><span class="lijnnummer paars">271</span></td>
+        <td>Brussel - Kampenhout Dreef</td>
+        <td>Leuven (regie), De Voeght K, Modern Toerisme T, Vilvoorde (regie), DDVR V</td>
       </tr>
       <tr>
-        <td><span class="lijnnummer darkgreen">R31</span></td>
-        <td>Brussel - Grimbergen - Verbrande Brug</td>
-        <td>VDL Hybrid</td>
+        <td><span class="lijnnummer geel">272</span></td>
+        <td>Brussel - Brussels Airport</td>
+        <td>Modern Toerisme T, De Voeght K, Leuven (regie)</td>
       </tr>
       <tr>
-        <td><span class="lijnnummer yellow">R30</span></td>
-        <td>Brussel - Grimbergen - Humbeek</td>
-        <td>VDL Hybrid</td>
+        <td><span class="lijnnummer staal">318</span></td>
+        <td>Brussel - Moorsel - Leuven</td>
+        <td>DDVR V, Multio W, Staca K, Leuven (regie)</td>
       </tr>
+      <tr>
+        <td><span class="lijnnummer rood">410</span></td>
+        <td>Brussel - Woluwe - Tervuren - Leuven (snelbus)</td>
+        <td>Leuven (regie), Multio B, Multio W, DDVR V, Staca K</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer oranje">470</span></td>
+        <td>Brussel - Kampenhout - Haacht (snelbus)</td>
+        <td>Leuven (regie), Modern Toerisme T, De Voeght K, DDVR V</td>
+      </tr>
+      <tr>
+        <td><span class="lijnnummer crème">714</span></td>
+        <td>Brussel - Aalst (snelbus)</td>
+        <td>Sylvae A, Sylvae H, Modern Toerisme D, Asse (regie), De Hauwere L</td>
+      </tr>
+
     </tbody>
   </table>
 
